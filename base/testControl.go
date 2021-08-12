@@ -3,6 +3,15 @@ package main
 import "fmt"
 
 func main() {
+	testLoop()
+}
+
+/**
+* 测试switch
+* testSwitch
+* @Description:
+*/
+func testSwitch()  {
 	score := 60
 	switch score {
 	case 90, 100:
@@ -17,5 +26,24 @@ func main() {
 		fmt.Println("Grade: D")
 	default:
 		fmt.Println("Grade: F")
+	}
+}
+
+/**
+* for循环，支持标签
+* testLoop
+* @Description:
+*/
+func testLoop()  {
+JLoop:
+	for j := 0; j < 5; j++ {
+		ILoop:
+		for i := 0; i < 10; i++ {
+			if i > 5 {
+				break ILoop
+			}
+			fmt.Println(i)
+		}
+		break JLoop
 	}
 }
