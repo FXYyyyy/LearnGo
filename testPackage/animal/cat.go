@@ -4,9 +4,9 @@ type Cat struct {
 	Animal
 	Pet
 }
-
+/*
 func (c Cat) GetName() string {
-	return c.Animal.getName() + c.Pet.GetName()
+	return c.Animal.GetName() + c.Pet.GetName()
 }
 
 func (c Cat) Call() string {
@@ -16,3 +16,4 @@ func (c Cat) Call() string {
 func (c Cat) FavorFood() string {
 	return "Fish"
 }
+ */

@@ -1,11 +1,20 @@
 package main
 
 import (
-	. "firstGo/testInterface/interfacerealize"
+	."firstGo/testInterface/interfacerealize"
 	"fmt"
 )
 
 func main() {
+	testRealize()
+}
+
+/**
+* 接口的赋值
+* testRealize
+* @Description: 
+*/
+func testRealize()  {
 	//用实现类的实例初始化接口，则其共用的同一份内存
 	r := Integer(1)
 	var m1 Math1

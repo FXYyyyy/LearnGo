@@ -8,7 +8,7 @@ func NewAnimal(n string) Animal {
 	return Animal{name: n}
 }
 
-func (a Animal) getName() string {
+func (a Animal) GetName() string {
 	return a.name
 }
 
