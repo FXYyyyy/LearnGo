@@ -8,9 +8,13 @@ func main() {
 	stu1 := NewStudent(1, "zhizhi", true, 95.5)
 	fmt.Println(stu1.GetName())
 
-	fmt.Printf("%T", stu1)
+	fmt.Printf("%T\n", stu1)
+	fmt.Printf("%T\n", *stu1)
 
 	stu1.setScore(90)	//stu1是一个指针类型，但是在使用时，会自动的解引用
+	fmt.Println(stu1)
+
+	(*stu1).setScore(80)
 	fmt.Println(stu1)
 }
 
