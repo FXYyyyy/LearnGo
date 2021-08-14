@@ -39,8 +39,9 @@ func testClass()  {
 func testAssertion()  {
 	animal := NewAnimal("中华田园猫")
 	pet := NewPet("kk")
-	cat := Cat{Animal: animal, Pet:pet}
-	var inAnimal InterfaceAnimal = cat
+	//cat := Cat{Animal: animal, Pet:pet}
+	//var inAnimal InterfaceAnimal = cat
+	var inAnimal InterfaceAnimal = NewCat(animal, pet)
 
 	fmt.Println(inAnimal.FavorFood())
 
