@@ -9,8 +9,7 @@ func NewCat(a Animal, p Pet) Cat {
 	return Cat{a, p}
 }
 
-/*
-func (c Cat) GetName() string {
+func (c *Cat) GetName() string {
 	return c.Animal.GetName() + c.Pet.GetName()
 }
 
@@ -22,4 +21,3 @@ func (c Cat) Call() string {
 func (c Cat) FavorFood() string {
 	return "Fish"
 }
- */
