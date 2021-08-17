@@ -71,4 +71,5 @@ func testRecover()  {
 	j := 0
 	ret := i/j
 	fmt.Println("i/j = ", ret)
+	fmt.Println("End TestRecover")	//j如果 = 0，发生panic，则代码终止执行，执行defer，最后这个End不会执行
 }
