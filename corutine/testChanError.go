@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 	"time"
 )
 
@@ -64,4 +65,6 @@ func chanCloseHandle()  {
 
 		fmt.Println("got num = ", num)
 	}
+
+	fmt.Println("cpu num = ", runtime.NumCPU())	//获取cpu核心数
 }
