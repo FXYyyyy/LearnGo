@@ -48,16 +48,35 @@ func addWithChan(a,b int, ch chan int)  {
 * @Description:
 */
 func testBufChan()  {
+	/*
 	ch := make(chan int, 20)
-	go addIntToChan(ch)
+	//go addIntToChan(ch)
+	go addIntToSingleTrack(ch)
+	 */
+	ch := returnSingleChan()
 
-	for c :=range ch {
+	for c :=range ch {	//通道不关闭，此处会陷入死循环
 		println(c)
 	}
 }
-func addIntToChan(ch chan int)  {
-	for i:=0; i<100;i++ {
+func addIntToChan(ch chan int)  {	
+	for i:=0; i<30;i++ {
 		ch<-i
 	}
 	close(ch)	//需显示关闭通道，都则主程序不知道子协程什么时候执行完，从一个空通道接受数据，会报错死锁
+}
+func addIntToSingleTrack(ch chan<- int)  {	//单向通道，该函数只能对该通道纪念性写操作
+	for i:=0; i<30;i++ {
+		ch<-i
+	}
+	close(ch)
+}
+
+func returnSingleChan() <-chan int {	//该函数只负责通道的写，返回读的通道，使函数指责清晰
+	ch := make(chan int, 30)	//此处的缓存，如果小于需放进去的变量数量，则会引起死锁
+	for i:=0; i<30; i++ {
+		ch<-i
+	}
+	close(ch)
+	return ch
 }
