@@ -34,14 +34,14 @@ func simplePool()  {
 * @param pool
 * @param deferFunc
 */
-func shareString(pool *sync.Pool, deferFunc func())  {
+func shareString(i string, pool *sync.Pool, deferFunc func())  {
 	defer deferFunc()
-	str := "zhihzi"
+	str := "zhihzi-" + i
 	pool.Put(str)	//将str存入pool，实现该协程的对象，与其他协程的共享
 }
 func testPoolWithGroup()  {
 	var wg sync.WaitGroup
-	wg.Add(1)
+	wg.Add(2)
 
 	pool := sync.Pool{
 		New: func() interface{} {
@@ -49,8 +49,10 @@ func testPoolWithGroup()  {
 		},
 	}
 
-	go shareString(&pool, wg.Done)
+	go shareString("1", &pool, wg.Done)
+	go shareString("2", &pool, wg.Done)
 	wg.Wait()
 
+	fmt.Println(pool.Get())	//获取子协程放入的对象
 	fmt.Println(pool.Get())	//获取子协程放入的对象
 }
