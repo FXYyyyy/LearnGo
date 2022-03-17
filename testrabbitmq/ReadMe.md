@@ -10,7 +10,8 @@
 
 
 ###权限
-用户名：zhizhi
-
-密码：fz..555FZ
+1、用户名：zhizhi  
+   密码：fz..555FZ  
+2、用户名：guest
+   密码：guest
 
