@@ -16,8 +16,25 @@ func main() {
 	time.Sleep(1e9)
 
 	fmt.Println("End main")
+
+	go running()
+	//此处阻塞了main，所以running会一直输出
+	var input string
+	fmt.Scanln(&input)
+	fmt.Println("justInput = ", input)
+
 }
 
 func goAdd(a,b int){
 	fmt.Printf("%d + %d = %d", a, b, a+b)
+}
+
+func running() {
+	var times int
+	for {
+		times++
+		fmt.Println("tick tok", times)
+
+		time.Sleep(time.Second)
+	}
 }
