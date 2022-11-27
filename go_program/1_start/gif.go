@@ -13,7 +13,12 @@ import (
 	"time"
 )
 
-var palette = []color.Color{color.White, color.Black}
+var palette = []color.Color{color.Black, color.RGBA{ //绿色
+	R: 0x00,
+	G: 0xff,
+	B: 0x00,
+	A: 0xff,
+}}
 
 const (
 	whiteIndex = 0
@@ -33,13 +38,13 @@ func main() {
 	}
 	//lis(os.Stdout) //打印出来会乱码
 }
-func lis(out io.Writer)  {
+func lis(out io.Writer) {
 	const (
-		cycles = 5
-		res = 0.001
-		size = 100
-		nframes  = 64
-		delay = 8
+		cycles  = 5
+		res     = 0.001
+		size    = 100
+		nframes = 64
+		delay   = 8
 	)
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{

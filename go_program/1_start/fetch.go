@@ -15,7 +15,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		b, err := ioutil.ReadAll(resp.Body)
+		b, err := ioutil.ReadAll(resp.Body) //读取一个可读取数据流
 		resp.Body.Close()
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetah: reading %s: %v\n", url, err)
