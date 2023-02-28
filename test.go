@@ -2,7 +2,6 @@ package main
 
 // 引入其它包
 import (
-	"firstGo/simplemath"
 	"fmt"
 	"os"
 	"strconv"
@@ -15,7 +14,7 @@ var Usage = func() {
 }
 
 // 程序入口函数
-func main ()  {
+func main() {
 	/*
 	 * 用于获取命令行参数，注意程序名本身是第一个参数，
 	 * 比如 calc add 1 2 这条指令，第一个参数是 calc
