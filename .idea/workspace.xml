@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb4d2e54-7380-4984-a883-ef7a6e7ac403" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/function/funcAsInterface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
-    </list>
+    <list default="true" id="bb4d2e54-7380-4984-a883-ef7a6e7ac403" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
