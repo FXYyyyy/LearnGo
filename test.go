@@ -2,7 +2,9 @@ package main
 
 // 引入其它包
 import (
+	"firstGo/simplemath"
 	"fmt"
+	"github.com/samber/lo"
 	"os"
 	"strconv"
 )
@@ -65,6 +67,10 @@ func main() {
 		ret := simplemath.Sqrt(v)
 		// 打印计算结果
 		fmt.Println("Result: ", ret)
+	case "uniq":
+		ret := lo.Uniq(args[2:])
+		fmt.Println("Result: ", ret)
+
 	// 如果计算方法不支持，打印程序使用指南
 	default:
 		Usage()
